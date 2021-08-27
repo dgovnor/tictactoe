@@ -1,13 +1,14 @@
 import React from "react";
 import Square from "./Square";
-import { HISTORY } from "../constant";
 
-const Board = ({ player, handleClick }) => {
+const Board = ({ player, handleClick, squares }) => {
   if (!player) {
     return null;
   }
+
+  console.log({ player, squares });
   const renderSquare = (i) => {
-    return <Square value={HISTORY.squares[i]} onClick={() => handleClick(i)} />;
+    return <Square value={squares[i]} onClick={() => handleClick(i)} />;
   };
 
   return (
